@@ -1,0 +1,385 @@
+<html lang="en"><head>
+	<title>Pharmarack App</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/enjoyhint.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/extra-style.css">
+	<link rel="stylesheet" href="css/slide-menu.css">
+	<link rel="stylesheet" href="css/full-slider.css">
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap-select.css">
+	<script type="text/javascript" src="js/lib/bootstrap-select.js"></script>
+	</head>
+<body class="">
+	<div class="container">
+		<div class="row">
+			<nav role="navigation" id="headerDiv" class="navbar navbar-default navbar-fixed-top top-nav-height">
+				<div class="container">
+					<div id="o-wrapper" class="o-wrapper navbar-header">
+						<div class="col-xs-1 p-l-0">
+							<a class="btn top-nav-height" id="showLeft" href="#">
+								<img src="images/user-icon.png" id="showLeft" aria-hidden="true" style="height:18px; margin-top:-3px;" alt="User profile">
+							</a>
+							<a class="btn top-nav-height btn-back" onclick="backPressed();" id="backbtn" style="display: none;">
+								<i class="fa fa-arrow-left"></i>
+							</a>
+						</div>
+						<div class="col-xs-6 p-r-0">
+							<a href="dashboard.html" id="title" class="btn top-nav-height navbar-headertext" style="display: none;">192.168.1.10</a>
+							<div class="right-inner-addon m-t-5" id="searchDashboard" style="display: block;">
+								<span id="icon_search_dash" class="right-eye">
+									<i class="fa fa-search right-addon-i" id="clear_search_dash"></i>
+								</span>
+								<input type="text" class="form-control changePlace form-control-pro-sr ui-autocomplete-input" id="search_dash" name="search_dash" placeholder="Product Search" autocomplete="off">
+							</div>
+						</div>
+						<div class="col-xs-5 p-r-0 pull-right">
+							<a class="btn top-nav-height pull-right" id="showRight" href="#">
+								<i class="fa fa-align-right" id="showRight" aria-hidden="true"></i>
+							</a>
+							<a class="btn top-nav-height pull-right" id="notification_dashboard" style="margin-right: 5px;" onclick="loadDiv('page_notification');">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>
+								<span class="sr-only">Notification</span>
+							</a>
+							<a class="btn top-nav-height pull-right" id="sharing_dashboard" style="margin-right: 5px;" onclick="socialShare();">
+								<i class="fa fa-share-alt" aria-hidden="true"></i>
+								<span class="sr-only">Share WA</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- /o-wrapper -->
+			<div class="cbp-spmenu-push">
+				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+					<div class="profile-sidebar">
+						<!-- SIDEBAR USERPIC -->
+						<div class="profile-userpic-wrap">
+							<div class="profile-userpic" onclick="addProfileImage(this)">
+								<img id="profile-userImg" src="images/client1.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+						<!-- END SIDEBAR USERPIC -->
+						<!-- SIDEBAR USER TITLE -->
+						<div class="profile-usertitle">
+							<div class="profile-usertitle-name">Bharat Prajapati</div>
+							<div class="profile-usertitle-shop">Healthcare medical chemist</div>
+							<div class="profile-usertitle-ver">Version 2.2.1</div>
+						</div>
+						<!-- END SIDEBAR USER TITLE -->
+						<!-- SIDEBAR MENU -->
+						<div id="profile-slmenu" class="profile-usermenu"><ul class="nav LMenu">
+	<li id="LMenu_dashboard" class="active">
+		<a href="javascript:void(0)" onclick="loadDiv('page_dashboard');">
+			<span class="col-xs-2"><i class="fa fa-home" aria-hidden="true"></i></span>Home
+		</a>
+	</li>
+	<li id="LMenu_profile">
+		<a href="javascript:void(0)" onclick="loadDiv('page_profile');">
+			<span class="col-xs-2"><i class="fa fa-user" aria-hidden="true"></i></span>My Profile
+		</a>
+	</li>
+	<li id="LMenu_refer" style="">
+		<a href="javascript:void(0)" onclick="loadDiv('page_referEarn');"><span class="col-xs-2"><i class="fa fa-user" aria-hidden="true"></i></span>Refer and Earn</a>
+	</li>
+	<li id="LMenu_changePwd">
+		<a href="javascript:void(0)" onclick="loadDiv('page_changePwd');">
+			<span class="col-xs-2"><i class="fa fa-lock" aria-hidden="true"></i></span>Change Password
+		</a>
+	</li>
+	<li id="LMenu_feedback">
+		<a href="javascript:void(0)" onclick="loadDiv('page_feedback');">
+			<span class="col-xs-2"><i class="fa fa-comment" aria-hidden="true"></i></span>Feedback
+		</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="window.location.href = 'tel:+919579870870'">
+			<span class="col-xs-2"><i class="fa fa-lg fa-phone" aria-hidden="true"></i></span>Call us
+		</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="window.location.href =&quot;mailto:care@pharmarack.com&quot;">
+			<span class="col-xs-2"><i class="fa fa-envelope" aria-hidden="true"></i></span>Email us
+		</a>
+	</li>
+	<!--<li>
+		<a href="javascript:void(0)" onclick="socialShare();">
+			<span class="col-xs-2"><i class="fa fa-share-alt" aria-hidden="true"></i></span>Refer a Friend</a>
+	</li>-->
+	<li>
+		<a href="javascript:void(0)" onclick="handleTandC();">
+			<span class="col-xs-2"><i class="fa fa-lock" aria-hidden="true"></i></span>Terms &amp; Conditions</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="handlePrivacyPolicy();">
+			<span class="col-xs-2"><i class="fa fa-lock" aria-hidden="true"></i></span>Privacy Policy</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="logout();">
+			<span class="col-xs-2"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a>
+	</li>
+</ul>
+<!-- END MENU -->
+</div>
+						<!-- END MENU -->
+					</div>
+				</nav>
+				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+					<h4 onclick="loadDiv('page_dashboard');"><i class="fa fa-home" aria-hidden="true"></i> Home</h4>
+					<div id="profile-srmenu" class="profile-usermenu"><ul class="nav RMenu">
+	<li id="RMenu_addPO">
+		<a href="javascript:void(0)" onclick="loadDiv('page_addPO');">
+			<span class="col-xs-2"><img src="images/new-orders_menu.png" style="height:15px;" alt="New Orders"></span>New Order
+		</a>
+	</li>
+	<li id="RMenu_viewPOList" class="">
+		<a href="javascript:void(0)" onclick="loadDiv('page_viewPOList');">
+			<span class="col-xs-2"><img src="images/my-orders_menu.png" style="height:15px;" alt="My Orders"></span>My Orders
+		</a>
+	</li>
+	<li id="RMenu_draftPO">
+		<a href="javascript:void(0)" onclick="loadDiv('page_draftPO');">
+			<span class="col-xs-2"><img src="images/draft-order_menu.png" style="height:15px;" alt="Draft Order"></span>Draft Order
+		</a>
+	</li>
+	<li id="RMenu_viewPaymentList" style="display: none;">
+		<a href="javascript:void(0)" onclick="loadDiv('page_viewPaymentList');">
+			<span class="col-xs-2"><img src="images/my-orders_menu.png" style="height:15px;" alt="My Payments"></span>My Payments
+		</a>
+	</li>
+	<li id="RMenu_addCN" style="display: none;">
+		<a href="javascript:void(0)" onclick="loadDiv('page_addCN');">
+			<span class="col-xs-2"><img src="images/new-orders_menu.png" style="height:15px;" alt="New Credit Note"></span>New Credit Note
+		</a>
+	</li>
+	<li id="RMenu_viewCNList" style="display: none;">
+		<a href="javascript:void(0)" onclick="loadDiv('page_viewCNList');">
+			<span class="col-xs-2"><img src="images/my-orders_menu.png" style="height:15px;" alt="View Credit Note"></span>View Credit Note
+		</a>
+	</li>
+	<li id="RMenu_addParty">
+		<a href="javascript:void(0)" onclick="loadDiv('page_addParty');">
+			<span class="col-xs-2"><img src="images/add-distributer_menu.png" style="height:15px;" alt="Add Distributer"></span>Add Distributor
+		</a>
+	</li>
+	<li id="RMenu_productsearch" style="">
+		<a href="javascript:void(0)" onclick="loadDiv('page_productsearchnew');">
+			<span class="col-xs-2"><img src="images/product-search_menu.png" style="height:15px;" alt="Product Search"></span>Product Search
+		</a>
+	</li>
+	<li id="RMenu_schemes">
+		<a href="javascript:void(0)" onclick="loadDiv('page_schemes');">
+			<span class="col-xs-2"><img src="images/schemes_menu.png" style="height:15px;" alt="Schemes"></span>Schemes
+		</a>
+	</li>
+</ul>
+</div>
+				</nav>
+			</div>
+			<!-- /c-menu slide-left -->
+			<div id="c-mask" class="c-mask"></div>
+			<!-- /c-mask -->
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div id="wrapperClass" class="col-md-12 content-wrapper1">
+					<div id="dashboardSlider" class="content-area" style="display: block;">
+						<div id="myCarousel" class="carousel slide" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li id="adInd-1" data-target="#myCarousel" data-slide-to="0" style="display: none;" class="active"></li>
+								<li id="adInd-2" data-target="#myCarousel" data-slide-to="1" class=""></li>
+								<li id="adInd-3" data-target="#myCarousel" data-slide-to="2"></li>
+								<li id="adInd-4" data-target="#myCarousel" data-slide-to="3" style="display: none;"></li>
+							</ol>
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div id="adItem-1" class="" style="display: none;">
+									<img id="ad-1" src="images/adunit/product_search_mob.png" onclick="loadDiv('page_productsearch');">
+								</div>
+								<div id="adItem-2" class="item active">
+									<img id="ad-2" src="images/adunit/scheme_mob.png" onclick="loadDiv('page_schemes');">
+								</div>
+								<div id="adItem-3" class="item">
+									<img id="ad-3" src="images/adunit/Add_dist_mob.png" onclick="loadDiv('page_addParty');">
+								</div>
+								<div id="adItem-4" class="" style="display: none;">
+									<img id="ad-4" src="images/adunit/product_search2_mob.png" onclick="loadDiv('page_productsearch');">
+								</div>
+							</div>
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"></span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"></span>
+							</a>
+						</div>
+					</div>
+					<!-- Full Page Image Background Carousel Header -->
+					<div id="page_dashboard" style="display: block;"><div class="row">
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_addPO');">
+		<div class="thumbnail pr-thumbnail" id="div_neworder_dash">
+			<a href="#"><img src="images/new-orders.png" alt="All Orders"></a>
+			<span class="caption">New Order</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_payments');">
+		<div class="thumbnail pr-thumbnail" id="div_payments_dash">
+			<a href="#"><img src="images/my-orders.png" alt="Schemes"></a>
+			<span class="caption">Payments</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_viewPOList');">
+		<div class="thumbnail pr-thumbnail" id="div_myorders_dash">
+			<a href="#"><img src="images/my-orders.png" alt="Schemes"></a>
+			<span class="caption">My Orders</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_viewPOListConsumer');" style="display: none;">
+		<div class="thumbnail pr-thumbnail" id="div_myordersconsumer_dash">
+			<a href="#"><img src="images/my-orders.png" alt="Schemes"></a>
+			<span class="caption">Consumer Orders</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_prLaunchProducts');">
+		<div class="thumbnail pr-thumbnail" id="div_prLaunchProducts_dash">
+			<a href="#"><img src="images/draft-order.png" alt="Leaderboard"></a>
+			<span class="caption">PR Store</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_draftPO');">
+		<div class="thumbnail pr-thumbnail" id="div_draftorder_dash">
+			<a href="#"><img src="images/draft-order.png" alt="Leaderboard"></a>
+			<span class="caption">Draft Order</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_addCN');" style="display: none;">
+		<div class="thumbnail pr-thumbnail" id="div_newcreditnote_dash">
+			<a href="#"><img src="images/new-orders.png" alt="All Orders"></a>
+			<span class="caption">New Credit Note</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_viewCNList');" style="display: none;">
+		<div class="thumbnail pr-thumbnail" id="div_viewcreditnote_dash">
+			<a href="#"><img src="images/my-orders.png" alt="Credit Note"></a>
+			<span class="caption">View Credit Note</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_viewPaymentList');" style="display: none;">
+		<div class="thumbnail pr-thumbnail" id="div_mypayments_dash">
+			<a href="#"><img src="images/my-orders.png" alt="Payments"></a>
+			<span class="caption">My Payments</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_addParty');">
+		<div class="thumbnail pr-thumbnail" id="div_adddistributor_dash">
+			<a href="#"><img src="images/add-distributer.png" alt="Add Distributor"></a>
+			<span class="caption">Add Distributor</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_productsearchnew')" style="">
+		<div class="thumbnail pr-thumbnail" id="div_productsearch_dash">
+			<a href="#"><img src="images/product-search.png" alt="Sales Force"></a>
+			<span class="caption">Product Search</span>
+		</div>
+	</div>
+	<div class="col-xs-6 text-center" onclick="loadDiv('page_schemes');">
+		<div class="thumbnail pr-thumbnail" id="div_schemes_dash">
+			<a href="#"><img src="images/schemes.png" alt="Leaderboard"></a>
+			<span class="caption">Schemes</span>
+		</div>
+	</div>
+</div>
+<script src="js/lib/hammer.min.js"></script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+	<script type="text/javascript" src="js/lib/menu.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+	<style type="text/css">
+	@import url("css/chat.css");
+	@import url("css/jquery-ui.min.css");
+	@import url("css/bootstrap-horizon.css");
+	</style>
+	<script>
+	var menuLeft = document.getElementById('cbp-spmenu-s1'),
+		menuRight = document.getElementById('cbp-spmenu-s2'),
+		showLeft = document.getElementById('showLeft'),
+		showRight = document.getElementById('showRight'),
+		body = document.body;
+	body.onclick = function(evt) {
+		var eventReference = (typeof evt !== "undefined") ? evt : event;
+		var eventTarget = (typeof eventReference.target !== "undefined") ? eventReference.target : eventReference.srcElement;
+		var $eid = eventTarget.id;
+		//alert($eid);
+		var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+		var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+		if ($eid === 'showLeft') {
+			//alert('showLeft CR '+checkRight);
+			if (checkRight) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+			//alert('showLeft CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			} else {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+		} else if ($eid === 'showRight') {
+			//alert('showRight CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+			//alert('showRight CR '+checkRight);
+			if (checkRight) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			} else {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+		} else {
+			var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+			//alert('else CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+			var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+			if (checkRight) {
+				classie.toggle(body, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+		}
+	};
+	</script>
+	<div id="globalAddBtn" class="btn-group dropup add-btn right" onclick="loadDiv('page_addPO')" style="bottom: 60px; display: none;">
+		<a href="javascript:void(0)" id="globalAddPOBtn">
+			<i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+		</a>
+	</div>
+	<!-- start: FOOTER -->
+	<div class="footer-container" style="position: relative; display: block;">
+		<div class="footer clearfix bg-oranger">
+			<div class="row">
+				<div id="left_footer" class="col-xs-2">
+					<a href="tel:+919579870870"><i class="fa fa-phone"></i></a>
+				</div>
+				<div id="copyright" class="col-xs-8 text-center color-white">2018 © Pharmarack</div>
+				<div id="right_footer" class="col-xs-2 text-right">
+					<a href="javascript:void(0)" onclick="loadDiv('page_feedback');"><i class="fa fa-comment"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: fixed; top: 308px; left: 70px; z-index: 3; display: none;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all ui-state-disabled" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">January</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">6</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">18</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">19</a></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">20</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">21</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">22</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">23</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">24</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">25</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">26</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">27</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">28</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">29</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">30</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">31</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></body></html>

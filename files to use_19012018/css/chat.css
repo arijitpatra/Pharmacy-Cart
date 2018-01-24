@@ -1,0 +1,121 @@
+.inner-chat {
+	overflow: scroll;
+	/*   background: #f2f2f2; */
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+}
+
+.inner-chat::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+.inner-chat .content {
+	padding: 10.66667px;
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 64px;
+	background: #ffffff;
+	/* box-shadow: 0px -3px 3px 0px rgba(50, 50, 50, 0.1); */
+}
+
+.message-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	/* margin: 10.66667px 0; */
+	padding: 5px 0;
+}
+
+.message-wrapper .circle-wrapper {
+	height: 42.66667px;
+	width: 42.66667px;
+	border-radius: 50%;
+}
+
+.message-wrapper .text-wrapper {
+	padding: 5px 8px;
+	min-height: 42.66667px;
+	width: 84%;
+	margin-left: 7px;
+	box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
+	border-radius: 2px;
+	border: 1px solid #eeeeee;
+	font-weight: 300;
+	position: relative;
+	/* word-break: break-all; 
+  opacity: 0;*/
+}
+
+.message-wrapper .text-wrapper:before {
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.message-wrapper.them .circle-wrapper {
+	background: #4592d6;
+	float: left;
+	color: #ffffff;
+}
+
+.message-wrapper.them .text-wrapper {
+	background: #fff;
+	float: left;
+	color: #3c3c3c;
+}
+
+.message-wrapper.them .text-wrapper:before {
+	border-width: 0 10px 10px 0;
+	border-color: transparent #eee transparent transparent;
+	position: absolute;
+	top: 0;
+	left: -10px;
+}
+
+.message-wrapper.me .circle-wrapper, .message-wrapper.me .text-wrapper {
+	background: #fca43a;
+	float: right;
+	color: #333333;
+}
+
+.circle-wrapper i.fa {
+	position: relative;
+	top: 12px;
+	left: 12px;
+}
+
+.message-wrapper.me .text-wrapper {
+	background: #ffffff;
+}
+
+.message-wrapper.me .text-wrapper:before {
+	border-width: 10px 10px 0 0;
+	border-color: #ffffff transparent transparent transparent;
+	position: absolute;
+	top: 0;
+	right: -9px;
+}
+
+/* @media (max-width: 560px) {
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .wrapper .inner-chat {
+    height: 100%;
+    height: 100vh;
+  }
+}*/

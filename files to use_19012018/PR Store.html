@@ -1,0 +1,195 @@
+<html lang="en"><head>
+	<title>Pharmarack App</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/enjoyhint.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/extra-style.css">
+	<link rel="stylesheet" href="css/slide-menu.css">
+	<link rel="stylesheet" href="css/full-slider.css">
+	</script><script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/lib/enjoyhint.js"></script>
+	<link rel="stylesheet" href="css/bootstrap-select.css">
+	<script type="text/javascript" src="js/lib/bootstrap-select.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<nav role="navigation" id="headerDiv" class="navbar navbar-default navbar-fixed-top top-nav-height">
+					<div class="container">
+						<div id="o-wrapper" class="o-wrapper navbar-header">
+							<div class="col-xs-1 p-l-0">
+								<a class="btn top-nav-height" id="showLeft" href="#">
+									<img src="images/user-icon.png" id="showLeft" aria-hidden="true" style="height:18px; margin-top:-3px;" alt="User profile">
+								</a>
+								<a class="btn top-nav-height btn-back" onclick="backPressed();" id="backbtn" style="display: none;">
+									<i class="fa fa-arrow-left"></i>
+								</a>
+							</div>
+							<div class="col-xs-6 p-r-0">
+								<a href="dashboard.html" id="title" class="btn top-nav-height navbar-headertext" style="">PR Store</a>
+								<div class="right-inner-addon m-t-5" id="searchDashboard" style="display: none;">
+									<span id="icon_search_dash" class="right-eye">
+										<i class="fa fa-search right-addon-i" id="clear_search_dash"></i>
+									</span>
+									<input type="text" class="form-control changePlace form-control-pro-sr ui-autocomplete-input" id="search_dash" name="search_dash" placeholder="Product Search" autocomplete="off">
+								</div>
+							</div>
+							<div class="col-xs-5 p-r-0 pull-right">
+								<a class="btn top-nav-height pull-right" id="showRight" href="#">
+									<i class="fa fa-align-right" id="showRight" aria-hidden="true"></i>
+								</a>
+								<a class="btn top-nav-height pull-right" id="notification_dashboard" style="margin-right: 5px;" onclick="loadDiv('page_notification');">
+									<i class="fa fa-bell-o" aria-hidden="true"></i>
+									<span class="sr-only">Notification</span>
+								</a>
+								<!--<a class="btn top-nav-height pull-right" id="showHelpTour" style="margin-right: 5px;" href="#" onclick="showTourDash();">
+									<i class="fa fa-question fa-2x" aria-hidden="true"></i>
+								</a>-->
+								<a class="btn top-nav-height pull-right" id="sharing_dashboard" style="margin-right: 5px;" onclick="socialShare();">
+									<i class="fa fa-share-alt" aria-hidden="true"></i>
+									<span class="sr-only">Share WA</span>
+								</a>
+								<!--<a class="globleSearchbtn btn top-nav-height pull-right" id="globalProdSearch_dashboard" href="#" onclick="loadDiv('page_productsearchnew');" style="display: none;">
+									<i class="fa fa-search"></i>
+								</a> -->
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- /o-wrapper -->
+				<div class="cbp-spmenu-push">
+					<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+						<div class="profile-sidebar">
+							<!-- SIDEBAR USERPIC -->
+							<div class="profile-userpic-wrap">
+								<div class="profile-userpic" onclick="addProfileImage(this)">
+									<img id="profile-userImg" src="images/client1.jpg" class="img-responsive" alt="">
+								</div>
+							</div>
+							<!-- END SIDEBAR USERPIC -->
+							<!-- SIDEBAR USER TITLE -->
+							<div class="profile-usertitle">
+								<div class="profile-usertitle-name">Bharat Prajapati</div>
+								<div class="profile-usertitle-shop">Healthcare medical chemist</div>
+								<div class="profile-usertitle-ver">Version 2.2.1</div>
+							</div>
+							<!-- END SIDEBAR USER TITLE -->
+							<!-- SIDEBAR MENU -->
+							<div id="profile-slmenu" class="profile-usermenu">
+							<!-- END MENU -->
+							</div>
+							<!-- END MENU -->
+						</div>
+					</nav>
+					<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+					</nav>
+				</div>
+				<!-- /c-menu slide-left -->
+				<div id="c-mask" class="c-mask"></div>
+				<!-- /c-mask -->
+			</div>
+			<div class="wrapper">
+				<div class="row">
+					<div id="wrapperClass" class="col-md-12 content-wrapper">
+						
+						<!-- Full Page Image Background Carousel Header -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /container -->
+
+		<script type="text/javascript" src="js/lib/menu.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+		<style type="text/css">
+		@import url("css/chat.css");
+		@import url("css/jquery-ui.min.css");
+		@import url("css/bootstrap-horizon.css");
+		</style>
+		<script>
+		var menuLeft = document.getElementById('cbp-spmenu-s1'),
+			menuRight = document.getElementById('cbp-spmenu-s2'),
+			showLeft = document.getElementById('showLeft'),
+			showRight = document.getElementById('showRight'),
+			body = document.body;
+		body.onclick = function(evt) {
+			var eventReference = (typeof evt !== "undefined") ? evt : event;
+			var eventTarget = (typeof eventReference.target !== "undefined") ? eventReference.target : eventReference.srcElement;
+			var $eid = eventTarget.id;
+			//alert($eid);
+			var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+			var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+			if ($eid === 'showLeft') {
+				//alert('showLeft CR '+checkRight);
+				if (checkRight) {
+					classie.toggle(this, 'active');
+					classie.toggle(menuRight, 'cbp-spmenu-open');
+				}
+				//alert('showLeft CL '+checkLeft);
+				if (checkLeft) {
+					classie.toggle(this, 'active');
+					classie.toggle(menuLeft, 'cbp-spmenu-open');
+				} else {
+					classie.toggle(this, 'active');
+					classie.toggle(menuLeft, 'cbp-spmenu-open');
+				}
+			} else if ($eid === 'showRight') {
+				//alert('showRight CL '+checkLeft);
+				if (checkLeft) {
+					classie.toggle(this, 'active');
+					classie.toggle(menuLeft, 'cbp-spmenu-open');
+				}
+				//alert('showRight CR '+checkRight);
+				if (checkRight) {
+					classie.toggle(this, 'active');
+					classie.toggle(menuRight, 'cbp-spmenu-open');
+				} else {
+					classie.toggle(this, 'active');
+					classie.toggle(menuRight, 'cbp-spmenu-open');
+				}
+			} else {
+				var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+				//alert('else CL '+checkLeft);
+				if (checkLeft) {
+					classie.toggle(this, 'active');
+					classie.toggle(menuLeft, 'cbp-spmenu-open');
+				}
+				var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+				if (checkRight) {
+					classie.toggle(body, 'active');
+					classie.toggle(menuRight, 'cbp-spmenu-open');
+				}
+			}
+		};
+		</script>
+
+		<div id="globalAddBtn" class="btn-group dropup add-btn right" onclick="loadDiv('page_addPO')" style="bottom: 100px;">
+			<a href="javascript:void(0)" id="globalAddPOBtn">
+				<i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+			</a>
+		</div>
+		<!-- start: FOOTER -->
+		<div class="footer-container" style="display: block; position: relative;">
+			<div id="respFooterAd" class="divFooterAd">
+			   <div id="footerBanner" style="display: none;" data-google-query-id="CPyQ8vSu49gCFViHaAodhfkHzw">
+			   <div id="google_ads_iframe_/103309636/Ret_bottom_banner_450_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103309636/Ret_bottom_banner_450_0" title="3rd party ad content" name="google_ads_iframe_/103309636/Ret_bottom_banner_450_0" width="450" height="50" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+			</div>
+			<div class="footer clearfix bg-oranger">
+				<div class="row">
+					<div id="left_footer" class="col-xs-2">
+						<a href="tel:+919579870870"><i class="fa fa-phone"></i></a>
+					</div>
+					<div id="copyright" class="col-xs-8 text-center color-white">2018 © Pharmarack</div>
+					<div id="right_footer" class="col-xs-2 text-right">
+						<a href="javascript:void(0)" onclick=""><i class="fa fa-comment"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

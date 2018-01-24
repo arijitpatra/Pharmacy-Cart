@@ -1,0 +1,475 @@
+* {
+    /* Disable selection/Copy of UIWebView */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+input,textarea {
+    /* Exception for input areas */
+    -webkit-touch-callout: default !important;
+    -webkit-user-select: text !important;
+}
+
+.modal-body {
+	height: auto;
+	max-height: 70vh !important;
+	min-height: 20vh !important;
+}
+/* ----------- iPhone 2G, 3G, 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:91%!important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        margin-right: 0px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:91%!important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+     margin-right: 0px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:91%!important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        margin-right: 0px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:91%!important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        margin-right: 0px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    
+}
+
+/* ----------- iPad ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:99% !important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        margin-right: 0px !important;
+    }
+    .valueinput-fld input {
+        height: 32px;
+    }
+    .valueinput-fld-other input {
+        height: 32px;
+    }
+    .container {
+        width: auto !important;
+    }
+    .navbar-header {
+        float: none !important;
+    }
+    .without_tagbubble {
+        padding-left: 5%;
+    }
+    
+    .cbp-spmenu-vertical {
+        width: 50% !important;
+    }
+    body {
+        font-size: 16px !important;
+    }
+    input, button, a, .footer {
+        font-size: 16px !important;
+    }
+    i.fa {
+        font-size: 20px !important;
+    }
+    .navbar-headertext {
+        font-size: 20px !important;
+        font-weight: bold !important;
+        line-height: 20px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait) {
+    
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+    
+}
+
+/* ----------- iPad 3 & 4 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:99%!important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        margin-right: 0px !important;
+    }
+    .valueinput-fld input {
+        height: 32px;
+    }
+    .valueinput-fld-other input {
+        height: 32px;
+    }
+    .container {
+        width: auto !important;
+    }
+    .navbar-header {
+        float: none !important;
+    }
+    .without_tagbubble {
+        padding-left: 5%;
+    }
+    
+    .cbp-spmenu-vertical {
+        width: 50% !important;
+    }
+    body {
+        font-size: 16px !important;
+    }
+    input, button, a, .footer {
+        font-size: 16px !important;
+    }
+    i.fa {
+        font-size: 20px !important;
+    }
+    .navbar-headertext {
+        font-size: 20px !important;
+        font-weight: bold !important;
+        line-height: 20px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    
+}
+
+/* ----------- iPad 1, 2, iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    .bootstrap-select.btn-group .dropdown-menu.inner li:last-child {
+        padding-bottom: 40px;
+        
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width : 100%;
+    }
+    ul.ui-autocomplete.ui-menu{
+        max-width:99%!important;
+    }
+    .absolute-nav{position:absolute; top:0; left:0;color:red;
+    }
+    .absolute-foot{position:absolute !important; bottom:0;
+    }
+    select{ -webkit-appearance: none;}
+    body{-webkit-appearance: none;}
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    
+    #page_notification .col-xs-11 { width:90%}
+    div#divOutstanding{ font-size:13px !important;}
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        margin-right: 0px !important;
+    }
+    .valueinput-fld input {
+        height: 32px;
+    }
+    .valueinput-fld-other input {
+        height: 32px;
+    }
+    .container {
+        width: auto !important;
+    }
+    .navbar-header {
+        float: none !important;
+    }
+    .without_tagbubble {
+        padding-left: 5%;
+    }
+    
+    .cbp-spmenu-vertical {
+        width: 50% !important;
+    }
+    body {
+        font-size: 16px !important;
+    }
+    input, button, a, .footer {
+        font-size: 16px !important;
+    }
+    i.fa {
+        font-size: 20px !important;
+    }
+    .navbar-headertext {
+        font-size: 20px !important;
+        font-weight: bold !important;
+        line-height: 20px !important;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1)
+and (orientation: portrait) {
+    
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1)
+and (orientation: landscape) {
+    
+}

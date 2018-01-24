@@ -1,0 +1,440 @@
+<html lang="en"><head>
+	<title>Pharmarack App</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/enjoyhint.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/extra-style.css">
+	<link rel="stylesheet" href="css/slide-menu.css">
+	<link rel="stylesheet" href="css/full-slider.css">
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/lib/enjoyhint.js"></script>
+	<link rel="stylesheet" href="css/bootstrap-select.css">
+	<script type="text/javascript" src="js/lib/bootstrap-select.js"></script>
+	
+</head>
+<body class="">
+	<div class="container">
+		<div class="row">
+			<nav role="navigation" id="headerDiv" class="navbar navbar-default navbar-fixed-top top-nav-height">
+				<div class="container">
+					<div id="o-wrapper" class="o-wrapper navbar-header">
+						<div class="col-xs-1 p-l-0">
+							<a class="btn top-nav-height" id="showLeft" href="#">
+								<img src="images/user-icon.png" id="showLeft" aria-hidden="true" style="height:18px; margin-top:-3px;" alt="User profile">
+							</a>
+							<a class="btn top-nav-height btn-back" onclick="backPressed();" id="backbtn" style="display: none;">
+								<i class="fa fa-arrow-left"></i>
+							</a>
+						</div>
+						<div class="col-xs-6 p-r-0">
+							<a href="dashboard.html" id="title" class="btn top-nav-height navbar-headertext" style="">My Orders</a>
+							<div class="right-inner-addon m-t-5" id="searchDashboard" style="display: none;">
+								<span id="icon_search_dash" class="right-eye">
+									<i class="fa fa-search right-addon-i" id="clear_search_dash"></i>
+								</span>
+								<input type="text" class="form-control changePlace form-control-pro-sr ui-autocomplete-input" id="search_dash" name="search_dash" placeholder="Product Search" autocomplete="off">
+							</div>
+						</div>
+						<div class="col-xs-5 p-r-0 pull-right">
+							<a class="btn top-nav-height pull-right" id="showRight" href="#">
+								<i class="fa fa-align-right" id="showRight" aria-hidden="true"></i>
+							</a>
+							<a class="btn top-nav-height pull-right" id="notification_dashboard" style="margin-right: 5px;" onclick="loadDiv('page_notification');">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>
+								<span class="sr-only">Notification</span>
+							</a>
+							<a class="btn top-nav-height pull-right" id="sharing_dashboard" style="margin-right: 5px;" onclick="socialShare();">
+								<i class="fa fa-share-alt" aria-hidden="true"></i>
+								<span class="sr-only">Share WA</span>
+							</a>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- /o-wrapper -->
+			<div class="cbp-spmenu-push">
+				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+					<div class="profile-sidebar">
+						<!-- SIDEBAR USERPIC -->
+						<div class="profile-userpic-wrap">
+							<div class="profile-userpic" onclick="addProfileImage(this)">
+								<img id="profile-userImg" src="images/client1.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+						<!-- END SIDEBAR USERPIC -->
+						<!-- SIDEBAR USER TITLE -->
+						<div class="profile-usertitle">
+							<div class="profile-usertitle-name">Bharat Prajapati</div>
+							<div class="profile-usertitle-shop">Healthcare medical chemist</div>
+							<div class="profile-usertitle-ver">Version 2.2.1</div>
+						</div>
+						<!-- END SIDEBAR USER TITLE -->
+						<!-- SIDEBAR MENU -->
+						<div id="profile-slmenu" class="profile-usermenu"><ul class="nav LMenu">
+	<li id="LMenu_dashboard" class="">
+		<a href="javascript:void(0)" onclick="loadDiv('page_dashboard');">
+			<span class="col-xs-2"><i class="fa fa-home" aria-hidden="true"></i></span>Home
+		</a>
+	</li>
+	<li id="LMenu_profile">
+		<a href="javascript:void(0)" onclick="loadDiv('page_profile');">
+			<span class="col-xs-2"><i class="fa fa-user" aria-hidden="true"></i></span>My Profile
+		</a>
+	</li>
+	<li id="LMenu_refer" style="">
+		<a href="javascript:void(0)" onclick="loadDiv('page_referEarn');"><span class="col-xs-2"><i class="fa fa-user" aria-hidden="true"></i></span>Refer and Earn</a>
+	</li>
+	<li id="LMenu_changePwd">
+		<a href="javascript:void(0)" onclick="loadDiv('page_changePwd');">
+			<span class="col-xs-2"><i class="fa fa-lock" aria-hidden="true"></i></span>Change Password
+		</a>
+	</li>
+	<li id="LMenu_feedback">
+		<a href="javascript:void(0)" onclick="loadDiv('page_feedback');">
+			<span class="col-xs-2"><i class="fa fa-comment" aria-hidden="true"></i></span>Feedback
+		</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="window.location.href = 'tel:+919579870870'">
+			<span class="col-xs-2"><i class="fa fa-lg fa-phone" aria-hidden="true"></i></span>Call us
+		</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="window.location.href =&quot;mailto:care@pharmarack.com&quot;">
+			<span class="col-xs-2"><i class="fa fa-envelope" aria-hidden="true"></i></span>Email us
+		</a>
+	</li>
+	<!--<li>
+		<a href="javascript:void(0)" onclick="socialShare();">
+			<span class="col-xs-2"><i class="fa fa-share-alt" aria-hidden="true"></i></span>Refer a Friend</a>
+	</li>-->
+	<li>
+		<a href="javascript:void(0)" onclick="handleTandC();">
+			<span class="col-xs-2"><i class="fa fa-lock" aria-hidden="true"></i></span>Terms &amp; Conditions</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="handlePrivacyPolicy();">
+			<span class="col-xs-2"><i class="fa fa-lock" aria-hidden="true"></i></span>Privacy Policy</a>
+	</li>
+	<li>
+		<a href="javascript:void(0)" onclick="logout();">
+			<span class="col-xs-2"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a>
+	</li>
+</ul>
+<!-- END MENU -->
+</div>
+						<!-- END MENU -->
+					</div>
+				</nav>
+				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+					<h4 onclick="loadDiv('page_dashboard');"><i class="fa fa-home" aria-hidden="true"></i> Home</h4>
+					<div id="profile-srmenu" class="profile-usermenu"><ul class="nav RMenu">
+	<li id="RMenu_addPO">
+		<a href="javascript:void(0)" onclick="loadDiv('page_addPO');">
+			<span class="col-xs-2"><img src="images/new-orders_menu.png" style="height:15px;" alt="New Orders"></span>New Order
+		</a>
+	</li>
+	<li id="RMenu_viewPOList" class="active">
+		<a href="javascript:void(0)" onclick="loadDiv('page_viewPOList');">
+			<span class="col-xs-2"><img src="images/my-orders_menu.png" style="height:15px;" alt="My Orders"></span>My Orders
+		</a>
+	</li>
+	<li id="RMenu_draftPO">
+		<a href="javascript:void(0)" onclick="loadDiv('page_draftPO');">
+			<span class="col-xs-2"><img src="images/draft-order_menu.png" style="height:15px;" alt="Draft Order"></span>Draft Order
+		</a>
+	</li>
+	<li id="RMenu_viewPaymentList" style="display: none;">
+		<a href="javascript:void(0)" onclick="loadDiv('page_viewPaymentList');">
+			<span class="col-xs-2"><img src="images/my-orders_menu.png" style="height:15px;" alt="My Payments"></span>My Payments
+		</a>
+	</li>
+	<li id="RMenu_addCN" style="display: none;">
+		<a href="javascript:void(0)" onclick="loadDiv('page_addCN');">
+			<span class="col-xs-2"><img src="images/new-orders_menu.png" style="height:15px;" alt="New Credit Note"></span>New Credit Note
+		</a>
+	</li>
+	<li id="RMenu_viewCNList" style="display: none;">
+		<a href="javascript:void(0)" onclick="loadDiv('page_viewCNList');">
+			<span class="col-xs-2"><img src="images/my-orders_menu.png" style="height:15px;" alt="View Credit Note"></span>View Credit Note
+		</a>
+	</li>
+	<li id="RMenu_addParty">
+		<a href="javascript:void(0)" onclick="loadDiv('page_addParty');">
+			<span class="col-xs-2"><img src="images/add-distributer_menu.png" style="height:15px;" alt="Add Distributer"></span>Add Distributor
+		</a>
+	</li>
+	<li id="RMenu_productsearch" style="">
+		<a href="javascript:void(0)" onclick="loadDiv('page_productsearchnew');">
+			<span class="col-xs-2"><img src="images/product-search_menu.png" style="height:15px;" alt="Product Search"></span>Product Search
+		</a>
+	</li>
+	<li id="RMenu_schemes">
+		<a href="javascript:void(0)" onclick="loadDiv('page_schemes');">
+			<span class="col-xs-2"><img src="images/schemes_menu.png" style="height:15px;" alt="Schemes"></span>Schemes
+		</a>
+	</li>
+</ul>
+</div>
+				</nav>
+			</div>
+			<!-- /c-menu slide-left -->
+			<div id="c-mask" class="c-mask"></div>
+			<!-- /c-mask -->
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div id="wrapperClass" class="col-md-12 content-wrapper1">
+					<div id="dashboardSlider" class="content-area" style="display: none;">
+						<div id="myCarousel" class="carousel slide" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li id="adInd-1" data-target="#myCarousel" data-slide-to="0" style="display: none;" class=""></li>
+								<li id="adInd-2" data-target="#myCarousel" data-slide-to="1" class="active"></li>
+								<li id="adInd-3" data-target="#myCarousel" data-slide-to="2"></li>
+								<li id="adInd-4" data-target="#myCarousel" data-slide-to="3" style="display: none;"></li>
+							</ol>
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div id="adItem-1" class="" style="display: none;">
+									<img id="ad-1" src="images/adunit/product_search_mob.png" onclick="loadDiv('page_productsearch');">
+								</div>
+								<div id="adItem-2" class="item">
+									<img id="ad-2" src="images/adunit/scheme_mob.png" onclick="loadDiv('page_schemes');">
+								</div>
+								<div id="adItem-3" class="item active">
+									<img id="ad-3" src="images/adunit/Add_dist_mob.png" onclick="loadDiv('page_addParty');">
+								</div>
+								<div id="adItem-4" class="" style="display: none;">
+									<img id="ad-4" src="images/adunit/product_search2_mob.png" onclick="loadDiv('page_productsearch');">
+								</div>
+							</div>
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"></span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"></span>
+							</a>
+						</div>
+					</div>
+
+					<script>
+						function showFilter(elem){
+		$('#myModalNorm').modal('show');
+}
+					</script>
+<div class="content-cardwrapper_vo">
+	<div class="table-grid">
+		<div class="row">
+			<div class="left-inner-addon col-xs-5">
+				<button id="btnSubmit_ADDPO" type="button" class="p-l-20 btn btn-default btn-block margin-bottom text-left" onclick="showFilter(this);">
+					<i class="p-l-20 fa fa-filter filter_viewPO"></i> <span>Filter Order</span>
+				</button>
+			</div>
+			<div class="col-xs-4 p-l-0 p-r-0">
+				<div class="text-primary text-bold text-right">Amount</div>
+				<div class="text-right">
+					<span class="strong h5 inr">₹</span><span id="totalAmtVO">1,242.55</span>
+				</div>
+			</div>
+			<div class="col-xs-3 pull-right p-l-0">
+				<div class="text-primary text-bold text-left">&nbsp;| Order</div>
+				<div class="text-left">
+					<span class="strong">&nbsp;| </span><span id="totalOrderVO">3</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="viewPOList"><div class="tablegrid"><div class="row-horizon m-t-60"><div class="row tablegrid-head"><div class="col-xs-9 h5 margin_0 wordWrapClass paddingbottom0"><b>Senior Agency</b></div><div class="col-xs-3 text-right btn-link paddingbottom0" onclick="goToViewDetailPO('2162684')">SEN47515</div></div><div class="row borderbottom"><div class="col-xs-6">13 Jan 10:38 AM</div><div class="col-xs-3 text-left" onclick="goToViewDetailPO('2162684')"><a class="btn-text"><span class="text-primary">Placed <i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div><div class="col-xs-3 text-right"><span class="strong h5 inr">₹</span>79.55</div></div><div class="row tablegrid-head"><div class="col-xs-9 h5 margin_0 wordWrapClass paddingbottom0"><b>Premier Distributors</b></div><div class="col-xs-3 text-right btn-link paddingbottom0" onclick="goToViewDetailPO('2162683')">PED7243</div></div><div class="row borderbottom"><div class="col-xs-6">13 Jan 10:31 AM</div><div class="col-xs-3 text-left" onclick="goToViewDetailPO('2162683')"><a class="btn-text"><span class="text-primary">Placed <i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div><div class="col-xs-3 text-right"><span class="strong h5 inr">₹</span>581.5</div></div><div class="row tablegrid-head"><div class="col-xs-9 h5 margin_0 wordWrapClass paddingbottom0"><b>Premier Distributors</b></div><div class="col-xs-3 text-right btn-link paddingbottom0" onclick="goToViewDetailPO('2162581')">PED7242</div></div><div class="row borderbottom"><div class="col-xs-6">9 Jan 3:17 PM</div><div class="col-xs-3 text-left" onclick="goToViewDetailPO('2162581')"><a class="btn-text"><span class="text-primary">Placed <i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div><div class="col-xs-3 text-right"><span class="strong h5 inr">₹</span>581.5</div></div></div></div></div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<nav role="navigation" class="navbar navbar-default top-nav-height">
+					<div class="container">
+						<div id="o-wrapper" class="o-wrapper navbar-header">
+							<div class="col-xs-10">
+								<h3 id="modalHeading" class="font24 navbar-text color-white">Order Filter</h3>
+							</div>
+							<div class="col-xs-2 text-center">
+								<a class="btn top-nav-height" data-dismiss="modal" href="#">
+									<i class="fa fa-times" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!-- Modal Body -->
+			<div class="modal-body">
+				<form name="frmOrders" class="contact-form">
+					<div class="form-group">
+						<div class="btn-group bootstrap-select show-tick form-control"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="ddlStores_ViewPO" title="Select Store"><span class="filter-option pull-left">Select Store</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off"></div><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Select Store</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">A.S. Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Accel India</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Amar Enterprises</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Ambey Pharma</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Anand Enterprises</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="6"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Anand Medical Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="7"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Anand Medical Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="8"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Arjas</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="9"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Arvind Distributors (Ayurvedic)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="10"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Ayush Pharma</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="11"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Bhagirath Pharma</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="12"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Bhagwati Enterprises</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="13"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">C.T. Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="14"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Chandan Pharmaceuticals</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="15"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Chandulal R Mehta</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="16"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Dev Agency</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="17"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Dhanashri Agencies</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="18"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Diamond Drug Stores</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="19"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Drug House</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="20"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Gayatri Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="21"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">H.M. &amp; Co. Medisales Pvt. Ltd.</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="22"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Jeevan Medisales Pvt. Ltd.</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="23"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Kundan Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="24"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Maharashtra Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="25"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Majithia Agency</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="26"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Majithia Medical Stores</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="27"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Medeeco Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="28"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Mediraj Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="29"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Modern Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="30"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">New Amar Agencies</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="31"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Nitin Agency</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="32"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">P K Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="33"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Padmashree Medical Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="34"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Pharm Deal</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="35"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Prakash Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="36"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Premier Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="37"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Rushabh Surgicals</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="38"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">S. B. JOSHI &amp; Co.</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="39"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Senior Agency</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="40"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shah Enterprises</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="41"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shah Medico</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="42"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shree Ambika Agencies</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="43"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shreyes Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="44"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shriram Enterprises</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="45"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shubh - Cipla Vital Care</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="46"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Shubh Pharma</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="47"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Success Surgicals</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="48"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Tapadiya Distributors</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="49"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Vardaan medical distributor</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="50"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Yashvi Agencies</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select id="ddlStores_ViewPO" name="ddlStores_ViewPO" class="selectpicker show-tick form-control" data-live-search="true" tabindex="-98"><option value="-1" selected="">Select Store</option><option value="47">A.S. Distributors</option><option value="102">Accel India</option><option value="85">Amar Enterprises</option><option value="6">Ambey Pharma</option><option value="29">Anand Enterprises</option><option value="7">Anand Medical Distributors</option><option value="7">Anand Medical Distributors</option><option value="77">Arjas</option><option value="19">Arvind Distributors (Ayurvedic)</option><option value="63">Ayush Pharma</option><option value="295">Bhagirath Pharma</option><option value="84">Bhagwati Enterprises</option><option value="34">C.T. Distributors</option><option value="26">Chandan Pharmaceuticals</option><option value="32">Chandulal R Mehta</option><option value="8">Dev Agency</option><option value="50">Dhanashri Agencies</option><option value="23">Diamond Drug Stores</option><option value="176">Drug House</option><option value="58">Gayatri Distributors</option><option value="12">H.M. &amp; Co. Medisales Pvt. Ltd.</option><option value="10">Jeevan Medisales Pvt. Ltd.</option><option value="109">Kundan Distributors</option><option value="161">Maharashtra Distributors</option><option value="27">Majithia Agency</option><option value="5">Majithia Medical Stores</option><option value="49">Medeeco Distributors</option><option value="18">Mediraj Distributors</option><option value="22">Modern Distributors</option><option value="15">New Amar Agencies</option><option value="17">Nitin Agency</option><option value="428">P K Distributors</option><option value="25">Padmashree Medical Distributors</option><option value="107">Pharm Deal</option><option value="30">Prakash Distributors</option><option value="33">Premier Distributors</option><option value="41">Rushabh Surgicals</option><option value="640">S. B. JOSHI &amp; Co.</option><option value="16">Senior Agency</option><option value="31">Shah Enterprises</option><option value="42">Shah Medico</option><option value="55">Shree Ambika Agencies</option><option value="38">Shreyes Distributors</option><option value="24">Shriram Enterprises</option><option value="78">Shubh - Cipla Vital Care</option><option value="4">Shubh Pharma</option><option value="104">Success Surgicals</option><option value="13">Tapadiya Distributors</option><option value="155">Vardaan medical distributor</option><option value="236">Yashvi Agencies</option></select></div>
+					</div>
+					<div class="form-group">
+						<select id="ddlStatus_ViewPO" name="ddlStatus_ViewPO" class="form-control">
+							<option value="-1" disabled="" selected="">Select Status</option>
+							<option value="1">Placed</option>
+							<option value="2">Uploaded</option>
+							<option value="3">Processed</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="text" name="searchtext" id="searchtext" value="" placeholder="Order No" class="form-control">
+					</div>
+					<div class="form-group tablegrid ">
+						<div class="row row-horizon">
+							<div class="col-xs-2">
+								<label>From Date:</label>
+							</div>
+							<div class="col-xs-4">
+								<input type="text" name="fromdate" id="fromdate" placeholder="From Date" class="form-control hasDatepicker" readonly="">
+							</div>
+							<div class="col-xs-2">
+								<label>To Date:</label>
+							</div>
+							<div class="col-xs-4">
+								<input type="text" name="todate" id="todate" placeholder="To Date" class="form-control hasDatepicker" readonly="">
+							</div>
+						</div>
+					</div>
+					<div id="divoperation" name="divoperation" class="row" style="">
+						<div class="form-group">
+							<label class="control-label col-sm-2">Operation:</label>
+							<div class="col-sm-10">
+								<select id="ddlOperation" name="ddlOperation" class="form-control">
+									<option value="view">View</option>
+									<!-- <option value="download" >Download</option>  -->
+									<option value="email">Email</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">Email Ids:</label>
+							<div class="col-sm-10">
+								<input type="text" name="emailids" class="form-control" id="emailids" value="">
+							</div>
+						</div>
+						<div class=" form-group clearfix">
+							<label class="control-label col-sm-2">Count: </label>
+							<div class="col-sm-10">
+								<input type="tel" name="count" class="form-control" id="count" value="100">
+							</div>
+						</div>
+						<div class="clearfix" id="Orders" name="Orders"></div>
+					</div>
+				</form>
+			</div>
+			<!-- Modal Footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-orange" data-dismiss="modal">Close</button>
+				<button id="btnSubmit_page_viewpolist" type="button" class="btn btn-blue" onclick="loadOrderDetails();">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+	
+	<script type="text/javascript" src="js/lib/menu.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+	<style type="text/css">
+	@import url("css/chat.css");
+	@import url("css/jquery-ui.min.css");
+	@import url("css/bootstrap-horizon.css");
+	</style>
+
+	<script>
+	var menuLeft = document.getElementById('cbp-spmenu-s1'),
+		menuRight = document.getElementById('cbp-spmenu-s2'),
+		showLeft = document.getElementById('showLeft'),
+		showRight = document.getElementById('showRight'),
+		body = document.body;
+	body.onclick = function(evt) {
+		var eventReference = (typeof evt !== "undefined") ? evt : event;
+		var eventTarget = (typeof eventReference.target !== "undefined") ? eventReference.target : eventReference.srcElement;
+		var $eid = eventTarget.id;
+		//alert($eid);
+		var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+		var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+		if ($eid === 'showLeft') {
+			//alert('showLeft CR '+checkRight);
+			if (checkRight) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+			//alert('showLeft CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			} else {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+		} else if ($eid === 'showRight') {
+			//alert('showRight CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+			//alert('showRight CR '+checkRight);
+			if (checkRight) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			} else {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+		} else {
+			var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+			//alert('else CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+			var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+			if (checkRight) {
+				classie.toggle(body, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+		}
+	};
+	</script>
+
+	<div id="globalAddBtn" class="btn-group dropup add-btn right" style="bottom: 100px;">
+		<a href="javascript:void(0)" id="globalAddPOBtn">
+			<i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+		</a>
+	</div>
+	<!-- start: FOOTER -->
+	<div class="footer-container" style="position: fixed; display: block;">
+		<div class="footer clearfix bg-oranger">
+			<div class="row">
+				<div id="left_footer" class="col-xs-2">
+					<a href="tel:+919579870870"><i class="fa fa-phone"></i></a>
+				</div>
+				<div id="copyright" class="col-xs-8 text-center color-white">2018 © Pharmarack</div>
+				<div id="right_footer" class="col-xs-2 text-right">
+					<a href="javascript:void(0)"><i class="fa fa-comment"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: fixed; top: 308px; left: 70px; z-index: 3; display: none;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all ui-state-disabled" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">January</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">6</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">18</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">19</a></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">20</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">21</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">22</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">23</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">24</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">25</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">26</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">27</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">28</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">29</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">30</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">31</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div>
+	</body>
+
+</html>

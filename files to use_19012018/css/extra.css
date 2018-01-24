@@ -1,0 +1,137 @@
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: 0.5;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 100;
+}
+
+/*.ui-autocomplete {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+*/
+/* .ui-autocomplete-loading { background:url('../img/small-loading.gif') no-repeat right center; } */
+.ui-autocomplete {width:75%; position: absolute; cursor: default;z-index:100;}
+.ui-menu .ui-menu-item { border-bottom: solid 1px gray; }
+.ui-menu .ui-menu-item a {font-size:15px; padding-top:0.4em; padding-bottom:0.4em;}
+
+.clearable{
+  background: #fff url(icoX.gif) no-repeat right -10px center;
+  border: 1px solid #999;
+  padding: 3px 18px 3px 4px;     /* Use the same right padding (18) in jQ! */
+  border-radius: 3px;
+  transition: background 0.4s;
+}
+.clearable.x  { background-position: right 5px center; } /* (jQ) Show icon */
+.clearable.onX{ cursor: pointer; }
+.badge1 {
+   position:relative;
+}
+.badge1[data-badge]:after {
+   content:attr(data-badge);
+   position:absolute;
+   top:-3px;
+   //right:-10px;
+   font-size:.7em;
+   background:green;
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:18px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
+/**Toast Start***************************************************************************/
+#toast{
+	position: fixed;
+	bottom:10%;
+	left: 10%;
+	right: 10%;
+	width: auto;
+	margin: auto;
+	border: 1px solid #333;
+	background-color: #333;
+	color:#fff;
+	padding: 10px;
+	text-align:center;
+	opacity: .9;
+	border-radius:5px;	
+	z-index: 9999;	 
+	/*The good stuff */
+	-webkit-transition: opacity 2.5s ease-out;  /* Saf3.2+, Chrome */
+	-moz-transition: opacity 2.5s ease-out;  /* FF4+ */
+	-ms-transition: opacity 2.5s ease-out;  /* IE10? */
+	-o-transition: opacity 1.5s ease-out;  /* Opera 10.5+ */
+	transition: opacity 1.5s ease-out;			
+}
+/**Toast End***************************************************************************/
+
+.img-capture{
+word-wrap: break-word;
+height:auto;
+overflow-x:visible;
+white-space: normal;
+text-align:left;
+}
+/*
+.changePlace:-ms-input-placeholder
+{
+  color: #FF0000;
+}
+/*
+.changePlace:-moz-placeholder
+{
+  color: #FF0000;
+}
+*/
+.changePlace::-webkit-input-placeholder {
+    color: #d3d3d3;
+	}
+.login-form .alert {
+    padding: 3px 5px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	}
+
+
+ #accord .panel-heading {
+	padding-left: 20px !important;
+	font-size: 15px;
+	height: 45px;
+	padding: 12px 15px !important;
+	}
+#accord .panel-heading > [class^="fa-"], #accord .panel-heading > [class*=" fa-"], #accord .panel-heading > [class^="icon-"], #accord .panel-heading > [class*=" icon-"], #accord .panel-heading > [class^="clip-"], #accord .panel-heading > [class*=" clip-"] {
+	right: 10px;
+	border: 0px;
+	box-shadow:0px !important;
+	padding: 17px 10px 8px;
+	height: 45px;
+	} 
+/*#accord  .collapse.in {
+    display: block;
+    padding: 10px;
+}*/
+#accord ul, #accord li{padding: 0; margin: 0;}
+#accord li{list-style: none; padding:5px 0; border-bottom: 1px solid #ccc;}
+
+.bg_blue_success{
+color:#4592d6 !important;
+}
+.bg_orange_failure{
+color:#fb8f0f !important;
+}

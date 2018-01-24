@@ -1,0 +1,363 @@
+
+ 
+/* Profile sidebar */
+.profile-sidebar {
+	padding: 0;
+	background: #fff;
+}
+
+.profile-userpic-wrap {
+	background-color: #4592d6;
+	padding:10px 0;
+}
+.profile-userpic {
+	position: relative;
+	margin: 0 auto;
+	overflow:hidden;
+	background: #fff;
+	width: 100px;
+	height: 100px;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	border-radius: 50% !important;
+}
+.profile-userpic img {
+	position: absolute;
+   left: 0%;
+   top: 0%;
+   width: 100%;
+}
+ 
+
+
+.profile-usertitle {
+	text-align: center;
+	padding-bottom: 1px;
+	background-color: #4592d6;
+}
+
+.profile-usertitle-name {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 7px;
+}
+
+.profile-usertitle-shop {
+	text-transform: uppercase;
+	color: #BADEFD;
+	font-size: 12px;
+	font-weight: 600;
+	margin:5px 0;
+}
+.profile-usertitle-ver {
+	text-transform: uppercase;
+	color: #BADEFD;
+	font-size: 12px;
+	font-weight: 600;
+	margin:5px 0;
+}
+.profile-userbuttons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 6px 15px;
+	margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+	margin-right: 0px;
+}
+
+.profile-usermenu {
+/* 	margin-top: 30px; */
+background: #fff;
+}
+
+.profile-usermenu ul li {
+	border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+	border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+	color: #333;
+	font-size: 14px;
+	font-weight: 400;
+	padding-left: 0;
+	line-height: 28px;
+}
+
+.profile-usermenu ul li a i {
+	margin-right: 8px;
+	font-size: 16px;
+}
+
+.profile-usermenu ul li a:hover {
+	background-color: #fafcfd;
+	color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+	border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+	color: #5b9bd1;
+	background-color: #f6f9fb;
+	border-left: 2px solid #5b9bd1;
+	/*  margin-left: -2px; */
+}
+
+/* Profile Content */
+.profile-content {
+	padding: 20px;
+	background: #fff;
+	min-height: 460px;
+}
+
+#pm_menu {
+	position: fixed;
+	overflow:scroll;
+	height: 100%;
+	width: 300px;
+	background: #fff;
+	top: 0;
+	z-index: 10000;
+	-webkit-animation: backSlideOut .3s both ease;
+	-moz-animation: backSlideOut .3s both ease;
+	animation: backSlideOut .3s both ease;
+}
+
+#pm_menu.pm_open{
+		left: 0px;
+		-webkit-animation: backSlideIn .5s both ease;
+		-moz-animation: backSlideIn .5s both ease;
+		animation: backSlideIn .5s both ease;
+	}
+	.pm_overlay{
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		position: fixed;
+		z-index: 9999;
+		background: rgba(0,0,0,0.5);
+		left: 0;
+		top: 0;
+		-webkit-animation: fadeOut .5s both ease;
+		-moz-animation: fadeOut .5s both ease;
+		animation: fadeOut .5s both ease;
+	}
+	.pm_overlay.pm_show{
+		display: block;
+		-webkit-animation: fadeIn .3s both ease;
+		-moz-animation: fadeIn .3s both ease;
+		animation: fadeIn .3s both ease;
+	}
+	.pm_overlay.pm_hide{
+		display: none;
+	}
+	/* Keyframes */
+	/*empty*/
+	@-webkit-keyframes empty {
+	  0% {opacity: 1}
+	}
+	@-moz-keyframes empty {
+	  0% {opacity: 1}
+	}
+	@keyframes empty {
+	  0% {opacity: 1}
+	}
+	@-webkit-keyframes fadeIn {
+	  0% { opacity:0; }
+	  100% { opacity:1; }
+	}
+	@-moz-keyframes fadeIn {
+	  0% { opacity:0; }
+	  100% { opacity:1; }
+	}
+	@keyframes fadeIn {
+	  0% { opacity:0; }
+	  100% { opacity:1; }
+	}
+	@-webkit-keyframes fadeOut {
+	  0% { opacity:1; }
+	  100% { opacity:0; display: none; }
+	}
+	@-moz-keyframes fadeOut {
+	  0% { opacity:1; }
+	  100% { opacity:0; display: none; }
+	}
+	@keyframes fadeOut {
+	  0% { opacity:1; }
+	  100% { opacity:0; display: none; }
+	}
+	@-webkit-keyframes backSlideOut {
+	  0% { opacity: 1; -webkit-transform: translateX(0px); }
+	  50% { opacity: 1; }
+	  100% { opacity: 0; -webkit-transform: translateX(-100%); }
+	}
+	@-moz-keyframes backSlideOut {
+	  0% { opacity: 1; -webkit-transform: translateX(0px); }
+	  50% { opacity: 1; }
+	  100% { opacity: 0; -webkit-transform: translateX(-100%); }
+	}
+	@keyframes backSlideOut {
+	  0% { opacity: 1; -webkit-transform: translateX(0px); }
+	  50% { opacity: 1; }
+	  100% { opacity: 0; -webkit-transform: translateX(-100%); }
+	}
+	@-webkit-keyframes backSlideIn {
+	  0% { opacity: 0; -webkit-transform: translateX(-100%); }
+	  100% { opacity: 1; -webkit-transform: translateX(0px); }
+	}
+	@-moz-keyframes backSlideIn {
+	  0% { opacity: 0; -webkit-transform: translateX(-100%); }
+	  100% { opacity: 1; -webkit-transform: translateX(0px); }
+	}
+	@keyframes backSlideIn {
+	  0% { opacity: 0; -webkit-transform: translateX(-100%); }
+	  100% { opacity: 1; -webkit-transform: translateX(0px); }
+	}
+
+	
+	
+	
+/* new menu css*/
+
+/* General styles for all menus */
+.cbp-spmenu {
+	background: #f3f3f3;
+	position: fixed;
+	box-shadow: 0px 0px 10px #666;
+}
+
+.cbp-spmenu h4 {
+	padding: 10px;
+	margin: 0;
+	font-weight: 300;
+	background: #4592d6;
+	color: #fff;
+}
+
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+	background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+	background: #afdefa;
+	color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+	width: 75%;
+	height: 100%;
+	top: 0;
+	z-index: 1599;
+	overflow: scroll;
+}
+
+.cbp-spmenu-vertical a {
+	/* border-bottom: 1px solid #258ecd; 
+	padding: 1em;*/
+}
+
+.cbp-spmenu-horizontal {
+	width: 100%;
+	height: 150px;
+	left: 0;
+	z-index: 1599;
+	overflow: scroll;
+}
+
+.cbp-spmenu-horizontal h3 {
+	height: 100%;
+	width: 20%;
+	float: left;
+}
+
+.cbp-spmenu-horizontal a {
+	float: left;
+	width: 20%;
+	padding: 0.8em;
+	border-left: 1px solid #258ecd;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left {
+	left: -100%;
+}
+
+.cbp-spmenu-right {
+	right: -100%;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+ 
+ 
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+ 
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 60%;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -60%;
+	}
+
+	.cbp-spmenu-right {
+		right: -60%;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 60%;
+	}
+}

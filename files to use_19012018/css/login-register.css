@@ -1,0 +1,286 @@
+body {
+	background: url(../images/prbg.jpg) top center;
+	color: #fff;
+}
+
+.ifont18 {
+	font-size: 18px;
+}
+.topmargin70 {
+	margin-top: 70px !important;
+}
+.topmargin35 {
+	margin-top: 35px !important;
+}
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+	font-weight: normal;
+}
+
+.form-control {
+	color: #d6d6d6;
+}
+
+.form-signin .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.left-inner-addon {
+	position: relative;
+	z-index: 9990;
+}
+
+.left-inner-addon input, .left-inner-addon select {
+	padding-left: 30px;
+}
+
+.left-inner-addon i {
+	position: absolute;
+	padding: 16px 12px;
+	pointer-events: none;
+}
+
+.right-inner-addon {
+	position: relative;
+}
+
+.right-inner-addon input {
+	padding-right: 30px;
+	text-decoration: none;
+}
+
+.right-inner-addon i {
+	position: absolute;
+	right: 0px;
+	padding: 16px 12px;
+	pointer-events: none;
+}
+
+#login .center {
+	text-align: center;
+}
+
+#login .login {
+	width: 100%;
+	max-width: 500px;
+	margin: 35px auto;
+}
+
+#login a {
+	color: #fff;
+}
+
+#login .logo {
+	width: 60%;
+	margin: 10% auto;
+	margin-bottom: 0px;
+	min-width: 150px;
+}
+
+#login .logo-register {
+	width: 60%;
+	/* margin-bottom: 20px; */
+	min-width: 150px;
+}
+
+#login .well {
+	background: none !important;
+	border: 0;
+}
+
+#login input:not([type="checkbox"]), #login select, button {
+	height: 50px;
+	border-radius:0 !important;
+	border: 0;
+}
+
+#login select, textarea, #login input:not([type="button"]) {
+    background: none !important;
+	border: 1px solid #ffffff;
+	border-radius: 0 !important;
+	text-decoration: none;
+}
+
+/* #login select, #login input[type="text"], #login input[type="email"], #login input[type="password"], #login input[type="number"] , textarea{
+	background: none !important;
+	border: 1px solid #ffffff;
+	border-radius: 0 !important;
+	text-decoration: none;
+} */
+
+#login input[type="submit"], #login input[type="button"] {}
+#login input[type="submit"], #login input[type="button"] {
+	border: none;
+}
+
+.right-eye i {
+	position: absolute;
+	right: 0px;
+	padding: 17px 12px;
+	pointer-events: auto;
+	z-index: 9990;
+}
+
+.padding0 {
+	padding: 0 !important;
+}
+/* .btn {}
+.btn-orange{background-color: #fb8f0f; border:none; outline: none; color:#fff;}
+.btn-orange:hover{background-color: #fb8f0f; border:none; outline: none !important; color:#fff;}
+.btn-blue:focus{background-color: #fb8f0f; bordre:none; outline: none !important; color:#fff;}
+.btn-blue:active{background-color: #fb8f0f; bordre:none; outline: none; color:#fff;}
+ */
+.btn-orange, .btn-orange:hover, .btn-blue:focus, .btn-blue:active {
+	background-color: #fb8f0f;/* border: none; */outline: none;color: #fff !important;
+}
+.btn-blue{background-color: #4592d6; outline: none; color:#fff;}
+.btn-blue:hover{background-color: #4592d6; bordre:none; outline: none !important; color:#fff;}
+.btn-blue:focus{background-color: #4592d6; bordre:none !important; outline: none; color:#fff;}
+.btn-blue:active{background-color: #4592d6; bordre:none; outline: none; color:#fff;}
+
+.upload-btn,.upload-btn:hover,.upload-btn:hover,.upload-btn:active {
+	outline: none !important;
+	background: none !important;
+	border: none !important;
+	color: #fff !important;
+}
+.thumbnail-img {
+	border: 0 none;
+	box-shadow: none;
+}
+.img-capture {
+	word-wrap: break-word;
+	height: auto;
+	overflow-x: visible;
+	white-space: normal;
+	text-align: left;
+}
+/************************************Toast Start***************************************************************************/
+#toast {
+	position: fixed;
+	bottom: 10%;
+	left: 10%;
+	right: 10%;
+	width: auto;
+	margin: auto;
+	border: 1px solid #333;
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	opacity: .9;
+	border-radius: 5px;
+	z-index: 9999;
+	/*The good stuff */
+	-webkit-transition: opacity 2.5s ease-out; /* Saf3.2+, Chrome */
+	-moz-transition: opacity 2.5s ease-out; /* FF4+ */
+	-ms-transition: opacity 2.5s ease-out; /* IE10? */
+	-o-transition: opacity 1.5s ease-out; /* Opera 10.5+ */
+	transition: opacity 1.5s ease-out;
+}
+
+#toastFix {
+	position: fixed;
+	left: 0%;
+	right: 0%;
+	width: auto;
+	margin: auto;
+	border: 1px solid #333;
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	opacity: .9;
+	z-index: 9999;
+	/*The good stuff */
+	-webkit-transition: opacity 2.5s swing; /* Saf3.2+, Chrome */
+	-moz-transition: opacity 2.5s ease-out; /* FF4+ */
+	-ms-transition: opacity 2.5s ease-out; /* IE10? */
+	-o-transition: opacity 1.5s ease-out; /* Opera 10.5+ */
+	transition: opacity 1.5s swing;
+}
+.msg-block{
+	display: block !important;
+	margin: 5px 0px !important;
+	font-weight: bold !important;
+}
+/**Toast End***************************************************************************/
+/* ---------------------------------------------------------------------- */
+/*	Footer and footer elemnts
+ /* ---------------------------------------------------------------------- */
+.footer-container {
+	position: fixed;
+	z-index:9999;
+	bottom: 0;
+	width: 100%;
+	box-shadow: 0px 2px 12px #666;
+}
+.footer {
+	font-size: 12px;
+	padding: 6px 15px;
+	position: relative;
+}
+.footer a{color:#fff;}
+.footer-inner {
+	float: left;
+}
+.footer-items {
+	float: right;
+}
+.footer-fixed .footer {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 1000;
+}
+.bg-oranger{
+	background: url(../images/prbg.jpg) bottom center /* #fca43a */;
+}
+.borderSuccess{
+	border-color: #3c763d !important;
+}
+.borderError{
+	border-color: #a94442 !important;
+}
+.labelApp{
+color: #999 !important;;
+font-weight: normal !important;;	
+}    
