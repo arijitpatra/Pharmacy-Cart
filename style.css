@@ -343,7 +343,7 @@ img[id^="ad-"] {
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 400px) {
+@media screen (max-width: 400px) {
 	.fs-21 {
 		font-size: 18px;
 	}
@@ -358,6 +358,10 @@ img[id^="ad-"] {
 
 	.fs-14 {
 		font-size: 12px;
+	}
+
+	.card--product {
+		height: 205px;
 	}
 
 }
