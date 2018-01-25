@@ -343,7 +343,7 @@ img[id^="ad-"] {
   }
 }
 
-@media screen (max-width: 400px) {
+@media screen and (max-width: 400px) {
 	.fs-21 {
 		font-size: 18px;
 	}
