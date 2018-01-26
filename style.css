@@ -6,6 +6,12 @@ body {
 	padding: 0;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  	-webkit-appearance: none; 
+  	margin: 0; 
+}
+
 .header {
 	height: 45px;
 	background: #FCA43A;
@@ -20,6 +26,32 @@ body {
 	background: #FCA43A;
 	width: 100%;
 	position: relative;
+}
+
+.checked {
+	color: #0ac522;
+    margin-left: 10px;
+}
+
+.remove {
+	color: #cc180b;
+    margin-left: 10px;
+}
+
+.card__cancel {
+	background-color: #cc180b;
+	position: absolute;
+	top: 100px;
+	right: 15px;	
+	height: 15px;
+	width: 70px;
+	border-radius: 2px;
+	border: none;
+	outline: none;
+	text-align: center;
+	text-transform: uppercase;
+	opacity: 0.8;
+	padding: 1px;
 }
 
 .flexbox-container-center {
@@ -80,6 +112,33 @@ body {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	outline: none;
+}
+
+.card__quantity {
+	position: absolute;
+	top: 55px;
+	right: 15px;	
+	height: 35px;
+	width: 70px;
+	border-radius: 5px;
+	outline: none;
+	border: 2px solid #4592D6;
+	padding: 5px;
+	text-align: center;
+}
+
+.card__quantity-indicator {
+	position: absolute;
+    right: 90px;
+    top: 65px;
+}
+
+.card__add:focus , .card__add:hover {
+	color: white;
+    transform: scale(1.05);
+    transition: 0.2s;
+    box-shadow: 0px 1px 3px #888888;
+    outline: none;
 }
 
 .card__ptr {
@@ -173,6 +232,14 @@ body {
 
 .fs-14 {
 	font-size: 14px;
+}
+
+.fs-12 {
+	font-size: 12px;
+}
+
+.fs-10 {
+	font-size: 10px;
 }
 
 .colour-555 {
@@ -310,6 +377,49 @@ img[id^="ad-"] {
     right: 0;
 }
 
+.checkout-cta {
+	position: fixed;
+	bottom: 0;
+	height: 65px;
+	width: 100%;
+	background-color: #333333;
+	color: #FCA43A;
+	box-shadow: 0px -1px 3px #000000;
+}
+
+.checkout-cta__cart-icon {
+	position: absolute;
+	bottom: 17px;
+	left: 15px;
+	width: 35px;
+}
+
+.checkout-cta__quantity {
+	position: absolute;
+	bottom: 35px;
+	left: 60px;
+}
+
+.checkout-cta__total {
+	position: absolute;
+	bottom: 10px;
+	left: 60px;
+}
+
+.checkout-cta__CTA-arrow {
+	position: absolute;
+	bottom: 19px;
+	right: 15px;
+	width: 25px;
+}
+
+.checkout-cta__CTA-text {
+	position: absolute;
+	bottom: 19px;
+	right: 51px;
+	text-transform: uppercase;
+}
+
 .popup{
   animation: popup 0.2s;
 }
@@ -372,3 +482,32 @@ img[id^="ad-"] {
 	}
 
 }
+
+@media screen and (max-width: 320px) {
+	.fs-21 {
+		font-size: 16px;
+	}
+
+	.fs-18 {
+		font-size: 14px;
+	}
+
+	.fs-16 {
+		font-size: 12px;
+	}
+
+	.fs-14 {
+		font-size: 10px;
+	}
+
+	.card__img {
+		height: 70px;
+		width: 70px;
+	}
+
+	.card--product {
+		height: 200px;
+	}
+
+}
+

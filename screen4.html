@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pharmarack</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<!--HEADER-->
+	<div class="row mgn-0">
+		<div class="col-xs-12 pad-0">
+			<div class="header">
+				<span class="colour-FFF bold fs-24">Order Summary</span>
+			</div>
+		</div>
+	</div>
+
+
+	<!--FOOTER-->
+	<div class="row mgn-0">
+		<div class="col-xs-12 pad-0">
+			<div class="footer text-center">
+				<span class="colour-FFF bold fs-14">Copyright Pharmarack</span>
+			</div>
+		</div>
+	</div>
+
+
+	<!--CHECKOUT CTA-->
+	<div class="row mgn-0">
+		<div class="col-xs-12 pad-0">
+			<div class="checkout-cta">
+				<img src="files to use_19012018/images/cart.png" class="checkout-cta__cart-icon" alt="cart">
+				<span class="checkout-cta__quantity medium fs-16">
+					1
+					<span class="regular fs-14">
+						item(s) in cart
+					</span>
+				</span>
+				<span class="checkout-cta__total regular fs-16">
+					Total:
+					<span class="medium fs-18">
+						&#8377 93477.50
+					</span>
+				</span>
+				<span class="checkout-cta__CTA-text fs-18 bold">Place Order</span>
+				<img src="files to use_19012018/images/right-arrow.png" class="checkout-cta__CTA-arrow" alt="arrow right">
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="files to use_19012018/js/lib/hammer.min.js"></script>
+
+	<script>
+	var menuLeft = document.getElementById('cbp-spmenu-s1'),
+		menuRight = document.getElementById('cbp-spmenu-s2'),
+		showLeft = document.getElementById('showLeft'),
+		showRight = document.getElementById('showRight'),
+		body = document.body;
+	body.onclick = function(evt) {
+		var eventReference = (typeof evt !== "undefined") ? evt : event;
+		var eventTarget = (typeof eventReference.target !== "undefined") ? eventReference.target : eventReference.srcElement;
+		var $eid = eventTarget.id;
+		//alert($eid);
+		var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+		var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+		if ($eid === 'showLeft') {
+			//alert('showLeft CR '+checkRight);
+			if (checkRight) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+			//alert('showLeft CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			} else {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+		} else if ($eid === 'showRight') {
+			//alert('showRight CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+			//alert('showRight CR '+checkRight);
+			if (checkRight) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			} else {
+				classie.toggle(this, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+		} else {
+			var checkLeft = classie.has(menuLeft, 'cbp-spmenu-open');
+			//alert('else CL '+checkLeft);
+			if (checkLeft) {
+				classie.toggle(this, 'active');
+				classie.toggle(menuLeft, 'cbp-spmenu-open');
+			}
+			var checkRight = classie.has(menuRight, 'cbp-spmenu-open');
+			if (checkRight) {
+				classie.toggle(body, 'active');
+				classie.toggle(menuRight, 'cbp-spmenu-open');
+			}
+		}
+	};
+	
+	$('#myCarousel').hammer().on('swipeleft', function () {
+		$('#myCarousel').carousel('next');
+	});
+	$('#myCarousel').hammer().on('swiperight', function () {
+		$('#myCarousel').carousel('prev');
+	});
+	/***************************************************************************
+	 * Script to Activate the Carousel
+	 */
+	$('#myCarousel').carousel({
+		interval: 5000
+		// changes the speed
+	});
+	</script>
+
+</body>
+</html>
