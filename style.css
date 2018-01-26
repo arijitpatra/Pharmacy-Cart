@@ -12,6 +12,10 @@ input[type=number]::-webkit-outer-spin-button {
   	margin: 0; 
 }
 
+.clickable {
+    cursor:pointer;
+}
+
 .header {
 	height: 45px;
 	background: #FCA43A;
