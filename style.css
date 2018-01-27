@@ -443,6 +443,65 @@ img[id^="ad-"] {
     margin-top: -10px;
 }
 
+.card--summary {
+	height: 135px;	
+}
+
+.card__name--summary {
+	left: 15px;
+}
+
+.card__quantity-indicator--summary {
+	top: 55px;
+	left: 15px;
+}
+
+.card__quantity--summary {
+    top: 45px;
+    left: 45px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #888888;
+}
+
+.card__free {
+	position: absolute;
+	top: 55px;
+	left: 135px;
+}
+
+.card__ptr--summary {
+	position: absolute;
+	top: 55px;
+	left: 200px;
+}
+
+.card__total--summary {
+	top: 87px;
+    left: 15px;
+}
+
+.card__scheme__data--summary {
+	top: 105px;
+    left: 15px;
+}
+
+.card__distributor--summary {
+	top: 87px;
+}
+
+.card__distributor__data--summary {
+	top: 105px;
+}
+
+.card__delete--summary {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: #cc180b;
+	font-size: 21px;
+}
+
 .popup{
   animation: popup 0.2s;
 }
